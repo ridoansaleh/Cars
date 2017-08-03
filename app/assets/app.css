@@ -1,0 +1,10 @@
+body {
+	margin-top: 10px;
+}
+
+h3 {
+	border-bottom: 5px solid #EC7063;
+	padding: 10px 0px;
+	background-color: #2980B9;
+	color: white;
+}

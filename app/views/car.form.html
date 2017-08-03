@@ -1,0 +1,51 @@
+<h2 ng-show="car._id!=null">Edit</h2>
+<h2 ng-hide="car._id!=null">Create</h2>
+<hr>
+<form class="form-horizontal" name="carForm" ng-submit="saveData(car)" enctype="multipart/form-data" novalidate>
+  <div class="form-group">
+    <label class="col-md-2">Nama</label>
+    <div class="col-md-10">
+      <input type="text" ng-model="car.nama" name="nama" ng-required="true" class="form-control" />
+      <p ng-show="carForm.nama.$error.required && (carForm.$submitted || carForm.nama.$dirty)" class="text-danger">Tuliskan Nama Mobil</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-2">Tahun Keluaran</label>
+    <div class="col-md-10">
+      <input type="text" name="tahunKeluaran" ng-model="car.tahunKeluaran" ng-required="true" class="form-control"/>
+      <p ng-show="carForm.tahunKeluaran.$error.required && (carForm.$submitted || carForm.tahunKeluaran.$dirty)" class="text-danger">Tuliskan Tahun Keluaran</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-2">Pabrikan</label>
+    <div class="col-md-10">
+      <!-- <input type="text" ng-model="car.pabrikan" name="pabrikan" ng-required="true" class="form-control" /> -->
+      <select class="form-control" ng-model="car.pabrikan" name="pabrikan" ng-required="true">
+        <option value="Mercedes Benz">Mercedes Benz</option>
+        <option value="Ford">Ford</option>
+        <option value="Ferrari">Ferrari</option>
+        <option value="Toyota">Toyota</option>
+        <option value="Mitsubishi">Mitsubishi</option>
+      </select>
+      <p ng-show="carForm.pabrikan.$error.required && (carForm.$submitted || carForm.pabrikan.$dirty)" class="text-danger">Pilih Pabrikan</p>
+    </div>
+  </div>
+  <!-- image belum ada -->
+  <div class="form-group">
+    <img src="images/hello.png">
+  </div>
+  <div class="form-group">
+    <label class="col-md-2">Gambar</label>
+    <div class="col-md-10">
+      <input type="file" class="form-control" ng-model="car.gambar" valid-file name="gambar" ng-required="true" />
+      <p ng-show="carForm.gambar.$error.required && carForm.$submitted" class="text-danger">Pilih Satu Gambar Dari Komputer Anda</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+      <input type="submit" value="Update" class="btn btn-primary" ng-show="car._id!=null" />
+      <input type="submit" value="Save" class="btn btn-primary" ng-hide="car._id!=null" />
+      <a ui-sref="cars" class="btn btn-warning">Cancel</a>
+    </div>
+  </div>
+</form>

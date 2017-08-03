@@ -1,0 +1,27 @@
+<h2>Cars Listing</h2>
+
+<table class="table" ng-if="cars.length>0">
+  <tr>
+    <th>ID</th>
+    <th>Nama</th>
+    <th>Tahun Keluaran</th>
+    <th>Pabrikan</th>
+    <th>Gambar</th>
+  </tr>
+  <tr ng-repeat="car in cars">
+    <td>{{car._id}}</td>
+    <td>{{car.nama}}</td>
+    <td>{{car.tahunKeluaran}}</td>
+    <td>{{car.pabrikan}}</td>
+    <td>
+      <img ng-src={{car.gambar}}/>
+    </td>
+    <td>
+      <a ui-sref="edit({id:car._id})">Edit</a> |
+      <a href="#" ng-click="deleteCar(car._id)">Delete</a>
+    </td>
+  </tr>
+</table>
+<div ng-if="cars.length==0">
+  Belum Ada Data !!
+</div>

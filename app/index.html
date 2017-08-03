@@ -1,26 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="CarApp">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Cars</title>
-	<link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-	<style type="text/css">
-		body {
-			margin-top: 10px;
-		}
-		h3 {
-			border-bottom: 5px solid #EC7063;
-			padding: 10px 0px;
-			background-color: #2980B9;
-			color: white;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/app.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="services/car.service.js"></script>
+	<script type="text/javascript" src="controllers/car.controller.js"></script>
 </head>
 <body>
 <div class="container">
-	<div class="row">
+
+	<nav class="navbar navbar-default">
+	    <div class="container-fluid">
+	        <div class="navbar-header">
+	        	<a class="navbar-brand" ui-sref="users">MEAN CRUD</a>
+	        </div>
+	        <ul class="nav navbar-nav">
+		        <li><a ui-sref="cars">Home</a></li>
+		        <li><a ui-sref="create">Create</a></li>
+	        </ul>
+	    </div>
+    </nav>
+
+	<div class="container">
+	    <ui-view></ui-view>
+	</div>
+
+
+	<!-- <div class="row">
 		<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 			<h3 class="text-center">Formulir Data Mobil Baru</h3>
 			<form>
@@ -43,13 +56,13 @@
 			    </select> 
 			  </div>
 			  <div class="form-group"> 
-			  	<label for="gambar">Pabrikan:</label>
+			  	<label for="gambar">Gambar:</label>
 			  	<input type="file" class="form-control" name="gambar" id="gambar">
 			  </div>
 			  <button type="submit" class="btn btn-primary">Simpan</button>
 			</form>
 		</div>
-	</div>
+	</div> -->
 </div>
 </body>
 </html>
